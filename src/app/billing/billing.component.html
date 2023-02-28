@@ -1,0 +1,67 @@
+
+<!-- billin is in app-nav-bar -->
+<!-- <app-nav-bar></app-nav-bar> -->
+<div class="container mt-3">
+
+  <h2>Billing Details</h2>
+  <mat-form-field  appearance="outline" >
+    <mat-label>Filter by studentID</mat-label>
+    <input [(ngModel)]="filter" autocomplete="off" (ngModelChange)="onFilterChange($event)" matInput placeholder="" value="">
+  </mat-form-field>
+  <button   class="list-group-item list-group-item-action line-h" >
+    <div class="row">
+      <div class="col-sm-12 col-md-1">
+        Bill No
+      </div>
+      <div class="col-sm-12 col-md-2">
+        Student ID
+      </div>
+      <div class="col-sm-12 col-md-2">
+        Amount Paid
+      </div>
+      <div class="col-sm-12 col-md-2">
+        Due Amount
+      </div>
+      <div class="col-sm-12 col-md-1">
+        Total Fee
+      </div>
+      <div class="col-sm-12 col-md-2">
+        Payment Date
+      </div>
+      <div class="col-sm-12 col-md-2">
+        Recived By
+      </div>
+
+
+    </div>
+  </button>
+  <div class="list-group">
+    <button *ngFor="let list of lists" type="button" (click)="onBntClick(list)"  [ngClass]= "{active: selectedItem == list.billNo}"  class="list-group-item list-group-item-action"  aria-current="true">
+      <div class="row">
+        <div class="col-sm-12 col-md-1">
+          {{list.billNo}}
+        </div>
+        <div class="col-sm-12 col-md-2">
+          {{list.studentID}}
+        </div>
+        <div class="col-sm-12 col-md-2">
+          {{list.amountPaid}}
+        </div>
+        <div class="col-sm-12 col-md-2">
+          {{list.dueAmount}}
+        </div>
+        <div class="col-sm-12 col-md-1">
+          {{list.totalFee}}
+        </div>
+        <div class="col-sm-12 col-md-2">
+          {{list.paymentDate | date}}
+        </div>
+        <div class="col-sm-12 col-md-2">
+          {{list.recivedBy}}
+        </div>
+      </div>
+    </button>
+
+  </div>
+
+</div>

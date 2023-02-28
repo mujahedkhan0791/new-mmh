@@ -1,0 +1,67 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <mat-form-field  appearance="outline" >
+        <mat-label>Course Name</mat-label>
+        <input [(ngModel)]="courseName" (ngModelChange)="onCourseChange($event)" autocomplete="off"  matInput placeholder="" value="">
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field  appearance="outline" >
+        <mat-label>Course Value</mat-label>
+        <input [(ngModel)]="courseValue" autocomplete="off"  matInput placeholder="" value="">
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field  appearance="outline" >
+        <mat-label>Course Price</mat-label>
+        <input [(ngModel)]="fee" autocomplete="off" type="number" matInput placeholder="" value="">
+      </mat-form-field>
+    </div>
+    <!-- <div class="col">
+      <mat-form-field  appearance="outline" >
+        <mat-label>Filter by Name</mat-label>
+        <input  autocomplete="off"  matInput placeholder="" value="">
+      </mat-form-field>
+    </div> -->
+  </div>
+  <button  *ngIf="!selectedNode" mat-raised-button color="primary" (click)="onAdd()" class="mt-3 ml-5 mb-5 margin-right5">Add</button>
+  <button *ngIf="selectedNode" mat-raised-button color="primary" class="mt-3 ml-5 mb-5  margin-right5" (click)="onUpdate(selectedNode)">Update</button>
+  <button *ngIf="selectedNode" mat-raised-button color="primary" class="mt-3 ml-5 mb-5  ml-5 margin-right5" (click)="onClear()">Clear</button>
+
+  <div class="list-group">
+    <button   class="list-group-item list-group-item-action line-h" >
+    <div class="row">
+      <div class="col-sm-12 col-md-4">
+        Course Name
+        </div>
+      <div class="col-sm-12 col-md-4">
+  Course value
+        </div>
+      <div class="col-sm-12 col-md-4">
+  Fee
+        </div>
+
+        </div>
+      </button>
+    <button *ngFor="let list of lists" type="button" (click)="onBntClick(list)"  [ngClass]= "{active: selectedItem == list.courseName}"  class="list-group-item list-group-item-action"  aria-current="true">
+      <div class="row">
+        <div class="col-sm-12 col-md-4">
+          {{list.courseName}}
+          </div>
+        <div class="col-sm-12 col-md-4">
+          {{list.courseValue}}
+          </div>
+        <div class="col-sm-12 col-md-4">
+          {{list.fee}}
+          </div>
+          </div>
+    </button>
+
+  </div>
+  <button *ngIf="selectedNode" mat-raised-button color="primary" class="mt-3 ml-5 margin-right5" (click)="onDelete(selectedNode._id)">Delete</button>
+  <button *ngIf="selectedNode" mat-raised-button color="primary" class="mt-3 ml-5 margin-right5" (click)="onClear()">Clear</button>
+
+</div>
+
+

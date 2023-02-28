@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+// @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+// @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+// @import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+// @import '~@angular/material/prebuilt-themes/purple-green.css';
+body {
+    // padding: 20px;
+    background: #d3d3d333;
+}
+.form-control.ng-touched.ng-invalid{
+    border: 2px solid red;
+}
+.mat-mdc-form-field {
+  width: 100%;
+}
+.list-group-item.active{
+  background-color: #3f51b5d1;
+}
+.mat-mdc-dialog-container .mdc-dialog__title {
+  // background: #00d2ff;
+}
+.mat-mdc-dialog-actions {
+  // background: #00d2ff;
+}
+.margin-right5 {
+  margin-right: 5px;;
+}
+.mat-toolbar.mat-primary {
+  // background: #3f51b5;
+  // color: #fff;
+  height: auto;
+  min-height: 64px;
+}

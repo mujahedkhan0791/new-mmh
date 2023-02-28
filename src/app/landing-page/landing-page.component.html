@@ -1,0 +1,35 @@
+<mat-toolbar color="primary">
+  <!-- <span>MMH Computers</span> -->
+  <div class="row">
+    <div class="col">
+      <button mat-raised-button color="primary" (click)="onCreate()" class="margin-right5">Registration</button>
+
+    </div>
+    <div class="col">
+      <button mat-raised-button color="primary" (click)="onStudentDetails()" class="margin-right5">Student Details</button>
+
+    </div>
+    <div class="col">
+      <button mat-raised-button color="primary" (click)="onSettings()" class="margin-right5">Settings</button>
+
+    </div>
+    <div class="col">
+      <button mat-raised-button color="primary" (click)="onBillDetails()" class="margin-right5">Bill Details</button>
+
+    </div>
+    <div class="col">
+      <button mat-raised-button color="primary" (click)="onOldregistration()" class="margin-right5">Add Old Student</button>
+
+    </div>
+  </div>
+
+  <span class="example-spacer"></span>
+  <button mat-raised-button color="primary" (click)="onSignUp()" class="margin-right5">Sign Up</button>
+  <button mat-raised-button color="primary" (click)="onLogout()" class="margin-right5">Log Out</button>
+
+   <!-- <button class="btn btn-primary  margin-right5">Log Out</button> -->
+
+</mat-toolbar>
+<div class="body-height">
+  <router-outlet></router-outlet>
+</div>

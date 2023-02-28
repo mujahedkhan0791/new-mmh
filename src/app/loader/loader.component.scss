@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.banner {
+  position: relative;
+  height: 400px;
+  background-image: url("https://as2.ftcdn.net/v2/jpg/05/73/77/51/1000_F_573775108_3ir273GY2Cc9Dgv5ENqZACMgdQceHjq3.jpg");
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.banner h1 {
+  font-size: 3rem;
+  margin: 0;
+  text-shadow: 2px 2px #000;
+}
+.banner p {
+  font-size: 1.5rem;
+  margin: 20px 0 0;
+  text-shadow: 2px 2px #000;
+}
+@media only screen and (max-width: 768px) {
+  .banner {
+    height: 250px;
+    padding: 20px;
+  }
+  .banner h1 {
+    font-size: 2rem;
+  }
+  .banner p {
+    font-size: 1rem;
+  }
+}

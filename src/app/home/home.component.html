@@ -1,0 +1,99 @@
+
+<div class="height-fix container-fluid">
+
+    <!-- <span *ngFor="let list of lists"> {{list.title}}</span> -->
+    <!-- <ul class="list-group">
+        <li *ngFor="let list of lists" class="list-group-item">{{list.title}}</li>
+    </ul> -->
+    <br><br>
+    <div class="list-group">
+      <button *ngFor="let list of lists" type="button" class="list-group-item list-group-item-action" (click)="onBntClick(list)" [ngClass]= "{active: selectedItem == list.title}" aria-current="true">
+        {{list.title}}
+      </button>
+
+    </div>
+
+
+
+
+  </div>
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-6 col-md-1">.
+
+    </div>
+    <div class="col-xs-6 col-md-1">
+  <button (click)="getData()" class="btn btn-primary">getData</button>
+
+    </div>
+    <div class="col-xs-6 col-md-1">
+  <button (click)="getDataMDB()" class="btn btn-primary">getMDB</button>
+
+    </div>
+    <div class="col-xs-6 col-md-1">
+  <button (click)="deleteRow()" class="btn btn-primary">Deleted</button>
+
+    </div>
+    <div class="col-xs-6 col-md-1">
+  <button (click)="updateRow()" class="btn btn-primary">update</button>
+
+    </div>
+    <div class="col-xs-6 col-md-1">
+      <button (click)="filePicker.click()" class="btn btn-primary">File</button>
+  <input type="file" (change)="onImageChange($event)" hidden #filePicker>
+    </div>
+    <div class="col-xs-6 col-md-1">
+      <input type="number" [(ngModel)]="currentPage" >
+
+        </div>
+        postsPerPage
+    <div class="col-xs-6 col-md-1">
+      <input type="number" [(ngModel)]="postsPerPage" >
+
+        </div>
+  </div>
+
+
+      <button (click)="redirectRegistration()" class="btn btn-primary">redirectReg</button>
+      <button (click)="redirectBilling()" class="btn btn-primary">Billing</button>
+
+
+    <div *ngIf="userIsAuthnticated && userId" class="col-xs-6 col-md-1">
+
+      <button  class="btn btn-primary">isAuthticated</button>
+
+        </div>
+
+
+      <button (click)="logOut()" class="btn btn-primary">logOut</button>
+
+
+
+  </div>
+
+<img [src]="url" height="200">
+<hr>
+<img *ngIf="selectedNode && selectedNode.imagePath" [src]="selectedNode.imagePath" height="200">
+<hr>
+
+<form #f="ngForm" (ngSubmit)="submit(f)">
+    <div class="form-group"><label for="firstName">
+        First Name
+    </label>
+    <input required ngModel name="firstName" #firstName="ngModel" type="text" id="firstName" class="form-control">
+    <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+        Alear Message
+    </div>
+    </div>
+
+    <div class="form-group"><label for="comment">Comment</label>
+        <textarea id="comment" ngModel name="comment" #comment="ngModel" cols="30" rows="10" class="form-control"></textarea>
+    </div>
+    <div class="form-group"><label for="contactMethod">
+        contactMethod
+    </label><select ngModel  name="contactMethod" id="contactMethod" class="form-control">
+        <!-- <option value="">none</option> -->
+        <option *ngFor="let method of contactList" [value]="method.id">{{method.name}}</option>
+    </select></div>
+    <button class="btn btn-secondary mt-3" [disabled]="!f.valid" type="submit">Submit</button>
+</form>

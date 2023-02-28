@@ -1,0 +1,37 @@
+<h2 mat-dialog-title>Payment Details</h2>
+<mat-dialog-content class="mat-typography">
+<h2>Account Details</h2>
+
+Student Id : {{studentID}} <br>
+Bill No : {{billNo}}
+<hr>
+<h2>Bill Details</h2>
+
+Current Invoice : {{amountPaid}}<br>
+Payment due : {{dueAmount}}
+<hr>
+<mat-form-field  appearance="outline" >
+  <mat-label>Payment Date</mat-label>
+  <input [(ngModel)]="paymentDate" matInput [matDatepicker]="pickerpaymentDate">
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="pickerpaymentDate"></mat-datepicker-toggle>
+  <mat-datepicker #pickerpaymentDate></mat-datepicker>
+</mat-form-field>
+<mat-form-field  appearance="outline" >
+  <mat-label>Pay Amount</mat-label>
+  <input (ngModelChange)="onAmountChange()"  [(ngModel)]="amountPaid" matInput type="number" placeholder="" value="">
+</mat-form-field>
+<mat-form-field  appearance="outline" >
+  <mat-label>Recived By</mat-label>
+  <input  [(ngModel)]="recivedBy" matInput placeholder="" value="">
+</mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button (click)="createBilling()" cdkFocusInitial>Proceed</button>
+</mat-dialog-actions>
+
+<snack-bar message="Bill Updated Successfully" #snack></snack-bar>
+
+
+
