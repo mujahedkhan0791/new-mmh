@@ -38,6 +38,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {ErrorInterceptor} from './error-interceptor';
 import { SettingsComponent } from './settings/settings.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -78,7 +79,8 @@ import { SettingsComponent } from './settings/settings.component';
     MatSelectModule,
     MatSnackBarModule,
     MatToolbarModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatPaginatorModule
 
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},

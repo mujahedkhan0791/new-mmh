@@ -29,7 +29,21 @@ exports.createBill = async (req, res, next)=> {
     }
 
     exports.getBills = (req, res, next) => {
-      const postQuery = Billing. find().sort({billNo:-1});
+      let postQuery = Billing. find().sort({billNo:-1});
+      let pageSize = '';
+      let currentPage = '';
+      if(req.query?.pagesize) {
+         pageSize = +req.query.pagesize;
+         currentPage = req.query.page;
+      }
+
+      if (pageSize && currentPage) {
+        postQuery
+        .skip(pageSize * (currentPage - 1))
+        .limit (pageSize);
+      }
+
+      //  postQuery = Billing. find().sort({billNo:-1});
 
       postQuery.then(documents => {
         res.status(200).json({

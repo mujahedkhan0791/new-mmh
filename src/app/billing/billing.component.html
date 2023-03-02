@@ -63,5 +63,11 @@
     </button>
 
   </div>
-
+  <mat-paginator [length]="length"
+  (page)="handlePageEvent($event)"
+  [pageSize]="billsPerPage"
+  [pageSizeOptions]="[5, 10, 25, 50]"
+  [showFirstLastButtons]="true"
+  aria-label="Select page">
+</mat-paginator>
 </div>
