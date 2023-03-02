@@ -20,6 +20,10 @@ export class NavBarService {
     return this.http.get<any>(BACKEDN_URL);
 
   }
+  getPagenationBills(queryParms: any){
+    return this.http.get<any>(BACKEDN_URL+queryParms);
+
+  }
   getBillNo(){
     return this.http.get<any>(BACKEDN_URL);
   }
